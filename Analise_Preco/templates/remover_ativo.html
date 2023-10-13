@@ -1,0 +1,21 @@
+<html>
+<head>
+    <title>Remover Ativos</title>
+</head>
+<body>
+    <h1>Remover Ativos</h1>
+
+    <form method="post">
+        {% csrf_token %}
+
+        <label for="ativos_selecionados">Selecione os ativos a serem removidos:</label>
+        <select name="ativos_selecionados" id="ativos_selecionados" multiple>
+            {% for ativo in ativos %}
+                <option value="{{ ativo.pk }}">{{ ativo.nome_ativo }}</option>
+            {% endfor %}
+        </select>
+
+        <button type="submit">Remover Ativos Selecionados</button>
+    </form>
+</body>
+</html>

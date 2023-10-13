@@ -1,0 +1,30 @@
+<html>
+<head>
+    <title>Ativos Cadastrados</title>
+</head>
+<body>
+    <h1>Ativos Cadastrados</h1>
+    
+    <table>
+        <thead>
+            <tr>
+                <th style="text-align: center;">Nome</th>
+                <th style="text-align: center;">Preço de Compra</th>
+                <th style="text-align: center;">Preço de Venda</th>
+                <th style="text-align: center;">Preço Atual</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for ativo in ativos %}
+                <tr>
+                    <td style="text-align: center;">{{ ativo.nome_ativo }}</td>
+                    <td style="text-align: center;">{{ ativo.preco_compra }}</td>
+                    <td style="text-align: center;">{{ ativo.preco_venda }}</td>
+                    <td style="text-align: center;">{{ ativo.preco_atual }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'home'%}"> Voltar para a página principal </a>
+</body>
+</html>
